@@ -124,6 +124,18 @@ public class Principal {
 		/*--------------------14/11/2018--------------------*/
 		String[] cadena = { "perro", "gato", "145", "arroz" };
 		ejer.ordenaCadena(cadena);
+		
+		/*-------------------20/11/2018---------------------*/
+		
+		/* ejercicio 2*/
+		int[] array1 = { 3, 6, 9, 9, 10, 15, 20, 25, 70 };
+		int[] array2 = { 1, 2, 9, 9, 25, 39, 58, 67, 77, 88, 99 };
+		int[] listamezclada = ejer.mezclarlistaOrdenada(array1, array2);
+		
+		
+		/* ejercicio 3*/
+		String palabra = "Hola Mundo";
+		System.out.println("la palabra invertida es: " + ejer.invertirCaracteres(palabra));
 
 		System.out.println("FIN DEL PROGRAMA");
 

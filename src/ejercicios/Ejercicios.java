@@ -5,9 +5,11 @@ import java.util.Random;
 import modelo.Persona;
 
 public class Ejercicios {
-	public void pruebasAPI() { /*--------04/10/2018-----------*/
-		/*
-		 * 1. Imprime por consola el valor de 2 elevado a 3 2. Imprime por consola un
+	public void pruebasAPI() { 
+		
+		/*--------04/10/2018-----------*/
+		
+		/* 1. Imprime por consola el valor de 2 elevado a 3 2. Imprime por consola un
 		 * valor aleatorio entre 1 y 100. 3. En la cadena "LAS PALMAS DE GRAN CANARIA",
 		 * imprime "GRAN"
 		 */
@@ -444,5 +446,53 @@ public class Ejercicios {
 					
 				}
 	}
+	
+	/*-------------------20/11/2018------------------------*/
+	
+	/* 2.“Mesclar” dos listas, previamente ordenadas*/
+	public int[]mezclarlistaOrdenada(int[] l1, int[] l2){
+		int i=0; int j=0; int k=0; //igualamos las variables que vamosa utlizar en esta actividad a 0
+		int [] resutado = new int[l1.length + l2.length];
+		 
+		while(l1[i] != Integer.MAX_VALUE || l2[j] != Integer.MAX_VALUE) {
+			/* en esta linea lo que estamos declarando es que mientras la l1 y l2
+			 * sean menores que el maximo que permite los numeros enteros y se pueda mesclar*/
+			if (l1[i] < l2[j]) 
+				//aqui comparamos las dos listas para saber cual es la mas pequña 
+				resutado[k] = l1[i++]; // es donde sumamos a la nueva lista el numero de la lista de i.
+				
+			else  // si no 
+				resutado[k] = l2[j++]; // sumamos el numero de la lista de j
+			
+			k++; // y despues los vamos smando y guardando
+			if (i == l1.length) // aqui comparamos que la lista de i sea igual a a l1
+				l1[-- i] = Integer.MAX_VALUE;
+			//si es asi, es donde le igualamos el maximo permitido a cada array de numeros.
+			
+			if(j == l2.length)
+				l2[-- j] = Integer.MAX_VALUE;
+		}
+		
+		return resutado; //aqui retornamos para que se cumpla en todos los posibles momentos
+	}
+	
+	/* 3.Invertir caracteres de una cadena*/
+	
+	public String invertirCaracteres(String caracteres) {
+		
+		String caracter = new String(); // creamos una variable vacia en donde se guardaran los caracteres
+		
+		for (int i = caracteres.length() -1 ; i >=0; i--) {
+		/* en el for igualamos la i con el numero de caracteres que tiene la palabra que vamos a utilizar y
+		 * le restamos 1 y decimos que tiene que ser mayor o igual que 0 para despues restarle para 
+		 * que se lea al reves*/	
+			caracter += caracteres.charAt(i);
+			/* la variable caracter la igualamos o la sumamos a la suma de los caracteres que tenga 
+			 * la i con el metodo charAt*/
+		}
+		return caracter;
+		
+	}
+	
 
 }
