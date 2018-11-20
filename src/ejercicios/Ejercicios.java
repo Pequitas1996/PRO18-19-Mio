@@ -462,6 +462,7 @@ public class Ejercicios {
 
 	}
 	
+	
 	/* 2.“Mesclar” dos listas, previamente ordenadas*/
 	public int[]mezclarlistaOrdenada(int[] l1, int[] l2){
 		int i=0; int j=0; int k=0; //igualamos las variables que vamosa utlizar en esta actividad a 0
