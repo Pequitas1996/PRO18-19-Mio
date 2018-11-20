@@ -134,7 +134,7 @@ public class Principal {
 		
 		
 		/* ejercicio 3*/
-		String palabra = "Hola Mundo";
+		String palabra = "Hola a todas las personas";
 		System.out.println("la palabra invertida es: " + ejer.invertirCaracteres(palabra));
 
 		System.out.println("FIN DEL PROGRAMA");
