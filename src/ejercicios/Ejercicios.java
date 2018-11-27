@@ -467,24 +467,29 @@ public class Ejercicios {
 	public int[]mezclarlistaOrdenada(int[] l1, int[] l2){
 		int i=0; int j=0; int k=0; //igualamos las variables que vamosa utlizar en esta actividad a 0
 		int [] resutado = new int[l1.length + l2.length];
-		 
-		while(l1[i] != Integer.MAX_VALUE || l2[j] != Integer.MAX_VALUE) {
+		 while(k < l1.length + l2.length) {
+			 
+		//while(l1[i] != Integer.MAX_VALUE || l2[j] != Integer.MAX_VALUE) {
 			/* en esta linea lo que estamos declarando es que mientras la l1 y l2
 			 * sean menores que el maximo que permite los numeros enteros y se pueda mesclar*/
-			if (l1[i] < l2[j]) 
-				//aqui comparamos las dos listas para saber cual es la mas pequña 
-				resutado[k] = l1[i++]; // es donde sumamos a la nueva lista el numero de la lista de i.
-				
-			else  // si no 
-				resutado[k] = l2[j++]; // sumamos el numero de la lista de j
+			try {
+				if (l1[i] < l2[j]) {
+					//aqui comparamos las dos listas para saber cual es la mas pequña 
+					resutado[k] = l1[i++]; // es donde sumamos a la nueva lista el numero de la lista de i.
+					
+				}else {  // si no 
+					resutado[k] = l2[j++]; // sumamos el numero de la lista de j
+				}
+				k++;
+			} catch(ArrayIndexOutOfBoundsException e) {
+				// y despueslos vamos smando y guardando
+				if (i == l1.length) // aqui comparamos que la lista de i sea igual a a l1
+					l1[-- i] = Integer.MAX_VALUE;
+				//si es asi, es donde le igualamos el maximo permitido a cada array de numeros.
 			
-			k++; // y despues los vamos smando y guardando
-			if (i == l1.length) // aqui comparamos que la lista de i sea igual a a l1
-				l1[-- i] = Integer.MAX_VALUE;
-			//si es asi, es donde le igualamos el maximo permitido a cada array de numeros.
-			
-			if(j == l2.length)
-				l2[-- j] = Integer.MAX_VALUE;
+				if(j == l2.length)
+					l2[-- j] = Integer.MAX_VALUE;
+			}
 		}
 		
 		return resutado; //aqui retornamos para que se cumpla en todos los posibles momentos
@@ -508,5 +513,31 @@ public class Ejercicios {
 		
 	}
 	
+	/*-----------------21/11/2018-------------------*/
+	/* Vamoos a ordenar una matriz*/
+	
+	public void ordenaFilasMatriz(int[][] matriz) {
+		
+		for (int i = 0; i < matriz.length; i++) //recorre la matriz desde 0 hasta length
+			ordenaArray(matriz[i]);
+		
+	}
+	/*----------------27/11/2018-------------------*/
+	/*Guardalo en un array de entetos*/
+	
+	
+	public int[]matrizToArrayOrdenado(int[][] matriz){
+		//implementacion
+		int[]resultado = new int[1];
+		ordenaFilasMatriz(matriz);
+		
+		for (int i = 0; i < matriz.length; i++) 
+			resultado= mezclarlistaOrdenada(matriz[i], resultado);
+		
+		return resultado;	
 
+	}
+	
+
+	
 }

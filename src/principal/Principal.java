@@ -105,7 +105,7 @@ public class Principal {
 		// System.out.println(ejercicios.esPrimo(99525));
 		int inicio = 500;
 		int cuantos = 5;
-		ejer.listarPrimos2(inicio, cuantos);
+		//ejer.listarPrimos2(inicio, cuantos);
 		System.out.println();
 
 		// int[] numeros = ejer.listarPrimos3(inicio, cuantos);
@@ -135,7 +135,29 @@ public class Principal {
 		
 		/* ejercicio 3*/
 		String palabra = "Hola a todas las personas";
-		System.out.println("la palabra invertida es: " + ejer.invertirCaracteres(palabra));
+		//System.out.println("la palabra invertida es: " + ejer.invertirCaracteres(palabra));
+		
+		/*---------------21/11/2018--------------------*/
+		int [] [] datos = 
+			{
+				{ 1 , 4 },
+				{ 7 , 4 , 6 },
+				{ 6 },
+				{ 5 , 2 , 3 },
+				{ 4 , 2 , 5 , 1 , 9 , 0 , 3 },
+				{ 5 , 6 , 1 , 3 }
+			};
+		ejer.ordenaFilasMatriz (datos);
+		
+		/*-------------27/11/2018-----------------------*/
+		int[][]matriz= {
+				{2, 6, 4},
+				{5},
+				{7, 9},
+				{10, 8, 3, 5}
+		};
+		
+		int[] resultado = ejer.matrizToArrayOrdenado(matriz);
 
 		System.out.println("FIN DEL PROGRAMA");
 
